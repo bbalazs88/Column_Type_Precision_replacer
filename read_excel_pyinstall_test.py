@@ -78,17 +78,15 @@ if separate_types_prec == 'Y':
     cols_list = cols_list[drop_cols - 1:]
     cols_list = [x.upper() for x in cols_list]
 
-    drop_types = int(input("Hányadik elemnél kezdődik a típusok felsorolása: "))
-    types_list = types_list[drop_types - 1:]
+    types_list = types_list[drop_cols - 1:]
     types_list = [x.upper() for x in types_list]
 
-    drop_prec = int(input("Hányadik elemnél kezdődik a hosszok felsorolása: "))
-    prec_list = prec_list[drop_prec - 1:]
+    prec_list = prec_list[drop_cols - 1:]
     prec_list = [x for x in prec_list]
 
-    print(cols_list, "\n")
-    print(types_list, "\n")
-    print(prec_list, "\n")
+    print('************************************************************** \n')
+    print("A végső sorrend:")
+    print(cols_list, types_list, prec_list, "\n", sep="\n")
 
     for i in types_list:
 
@@ -98,13 +96,7 @@ if separate_types_prec == 'Y':
         if i == "DATE":
             sql_type.append(9)
 
-        if i == "VARCHAR(30)":
-            sql_type.append(12)
-
-        if i == "VARCHAR(255)":
-            sql_type.append(12)
-
-        if i == "VARCHAR(1)":
+        if i == "VARCHAR":
             sql_type.append(12)
 
         if i == "DOUBLE":
@@ -155,12 +147,12 @@ else:
     cols_list = cols_list[drop_cols - 1:]
     cols_list = [x.upper() for x in cols_list]
 
-    drop_types = int(input("Hányadik elemnél kezdődik a típusok felsorolása: "))
-    types_list = types_list[drop_types - 1:]
+    types_list = types_list[drop_cols - 1:]
     types_list = [x.upper() for x in types_list]
 
-    print(cols_list, "\n")
-    print(types_list, "\n")
+    print('************************************************************** \n')
+    print("A végső sorrend: ")
+    print(cols_list, types_list, sep="\n")
 
     for i in types_list:
 
